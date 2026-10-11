@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sree Ganga & Prithviraj | Wedding Invitation</title>
+<style>
+:root {
+  --maroon: #641d28;
+  --gold: #c6a15b;
+  --cream: #fff9ed;
+  --ink: #482b25;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+header {
+  background: var(--maroon);
+  color: #fff5df;
+  padding: 24px 12px;
+  border-bottom: 4px double var(--gold);
+}
+header p { margin: 5px; letter-spacing: 3px; font-size: 12px; }
+.temple {
+  padding: 45px 18px 55px;
+  background:
+    radial-gradient(ellipse at top, #f4dfb5 0%, var(--cream) 65%);
+}
+.om { color: var(--maroon); font-size: 34px; }
+.ornament { color: var(--gold); font-size: 25px; margin: 16px; }
+h1 {
+  color: var(--maroon);
+  font-size: clamp(32px, 7vw, 55px);
+  font-weight: normal;
+  line-height: 1.25;
+  margin: 18px 0;
+}
+h2 { color: var(--maroon); font-weight: normal; }
+.invite {
+  max-width: 680px;
+  margin: auto;
+  line-height: 1.9;
+  font-size: 17px;
+}
+.names { margin: 28px 0; }
+.ampersand { color: var(--gold); font-size: 30px; }
+.details {
+  max-width: 540px;
+  margin: 32px auto;
+  padding: 24px 15px;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+}
+.date { font-size: 23px; color: var(--maroon); }
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 600px;
+  margin: 30px auto;
+}
+.photo {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  color: #785c40;
+  background: #f3e7d2;
+  border: 1px dashed var(--gold);
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid var(--gold);
+  background: var(--maroon);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 3px;
+}
+footer {
+  background: var(--maroon);
+  color: #fff5df;
+  padding: 25px 12px;
+  line-height: 1.8;
+}
+.music { margin: 20px auto; }
+.small { font-size: 13px; }
+@media(max-width: 480px) {
+  .photos { grid-template-columns: 1fr; }
+  .photo { min-height: 150px; }
+  .temple { padding-top: 30px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <p>॥ SHUBHAMASTU ॥</p>
+  <div class="ornament">❈ ❈ ❈</div>
+  <p>WEDDING INVITATION</p>
+</header>
+
+<main class="temple">
+  <div class="om">ॐ</div>
+  <div class="ornament">❧ ❈ ❧</div>
+  <p class="small">WITH THE BLESSINGS OF OUR FAMILIES</p>
+
+  <div class="names">
+    <h1>Sree Ganga S D</h1>
+    <div class="ampersand">&</div>
+    <h1>Prithviraj N</h1>
+  </div>
+
+  <div class="ornament">✥ ━━━━━ ✥</div>
+
+  <div class="invite">
+    With joyful hearts and the blessings of our elders,
+    <br>
+    we invite you to join us as we begin
+    <br>
+    our journey together in marriage.
+  </div>
+
+  <section class="details">
+    <h2>Our Wedding</h2>
+    <p class="date">Wedding date to be announced</p>
+    <p>Venue details will be shared soon.</p>
+  </section>
+
+  <h2>A Few Special Moments</h2>
+  <p class="small">Our photographs will be added here soon.</p>
+  <div class="photos">
+    <div class="photo">Photo 1<br>Coming soon</div>
+    <div class="photo">Photo 2<br>Coming soon</div>
+  </div>
+
+  <div class="music">
+    <button id="musicButton" type="button">♫ Turn Music On</button>
+    <p class="small" id="musicStatus">Background music is off.</p>
+    <audio id="weddingMusic" loop preload="none"></audio>
+  </div>
+</main>
+
+<footer>
+  <div class="ornament">❈</div>
+  With love and blessings
+  <br>
+  <strong>Sree Ganga & Prithviraj</strong>
+  <p class="small">We look forward to celebrating with you.</p>
+</footer>
+
+<script>
+const audio = document.getElementById("weddingMusic");
+const button = document.getElementById("musicButton");
+const status = document.getElementById("musicStatus");
+
+// Add your own music file URL here when ready.
+audio.src = "";
+
+button.addEventListener("click", async () => {
+  if (!audio.src || audio.src === window.location.href) {
+    status.textContent =
+      "Add a music file URL in the website code to enable playback.";
+    return;
+  }
+
+  if (audio.paused) {
+    try {
+      await audio.play();
+      button.textContent = "♫ Turn Music Off";
+      status.textContent = "Background music is playing.";
+    } catch (error) {
+      status.textContent = "Please try turning the music on again.";
+    }
+  } else {
+    audio.pause();
+    button.textContent = "♫ Turn Music On";
+    status.textContent = "Background music is off.";
+  }
+});
+</script>
+</body>
+</html>
