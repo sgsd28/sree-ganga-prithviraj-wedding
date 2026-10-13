@@ -1,188 +1,142 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sree Ganga & Prithviraj | Wedding Invitation</title>
-<style>
-:root {
-  --maroon: #641d28;
-  --gold: #c6a15b;
-  --cream: #fff9ed;
-  --ink: #482b25;
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  color: var(--ink);
-  background: var(--cream);
-  font-family: Georgia, "Times New Roman", serif;
-  text-align: center;
-}
-header {
-  background: var(--maroon);
-  color: #fff5df;
-  padding: 24px 12px;
-  border-bottom: 4px double var(--gold);
-}
-header p { margin: 5px; letter-spacing: 3px; font-size: 12px; }
-.temple {
-  padding: 45px 18px 55px;
-  background:
-    radial-gradient(ellipse at top, #f4dfb5 0%, var(--cream) 65%);
-}
-.om { color: var(--maroon); font-size: 34px; }
-.ornament { color: var(--gold); font-size: 25px; margin: 16px; }
-h1 {
-  color: var(--maroon);
-  font-size: clamp(32px, 7vw, 55px);
-  font-weight: normal;
-  line-height: 1.25;
-  margin: 18px 0;
-}
-h2 { color: var(--maroon); font-weight: normal; }
-.invite {
-  max-width: 680px;
-  margin: auto;
-  line-height: 1.9;
-  font-size: 17px;
-}
-.names { margin: 28px 0; }
-.ampersand { color: var(--gold); font-size: 30px; }
-.details {
-  max-width: 540px;
-  margin: 32px auto;
-  padding: 24px 15px;
-  border-top: 1px solid var(--gold);
-  border-bottom: 1px solid var(--gold);
-}
-.date { font-size: 23px; color: var(--maroon); }
-.photos {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  max-width: 600px;
-  margin: 30px auto;
-}
-.photo {
-  min-height: 180px;
-  display: grid;
-  place-items: center;
-  padding: 12px;
-  color: #785c40;
-  background: #f3e7d2;
-  border: 1px dashed var(--gold);
-}
-button {
-  font: inherit;
-  cursor: pointer;
-  border: 1px solid var(--gold);
-  background: var(--maroon);
-  color: white;
-  padding: 12px 18px;
-  border-radius: 3px;
-}
-footer {
-  background: var(--maroon);
-  color: #fff5df;
-  padding: 25px 12px;
-  line-height: 1.8;
-}
-.music { margin: 20px auto; }
-.small { font-size: 13px; }
-@media(max-width: 480px) {
-  .photos { grid-template-columns: 1fr; }
-  .photo { min-height: 150px; }
-  .temple { padding-top: 30px; }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6efdf">
+  <meta name="description" content="Wedding invitation of Sree Ganga S D and Prithviraj N — November 21–22, 2026, Bengaluru.">
+  <title>Sree Ganga & Prithviraj | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <p>॥ SHUBHAMASTU ॥</p>
-  <div class="ornament">❈ ❈ ❈</div>
-  <p>WEDDING INVITATION</p>
-</header>
-
-<main class="temple">
-  <div class="om">ॐ</div>
-  <div class="ornament">❧ ❈ ❧</div>
-  <p class="small">WITH THE BLESSINGS OF OUR FAMILIES</p>
-
-  <div class="names">
-    <h1>Sree Ganga S D</h1>
-    <div class="ampersand">&</div>
-    <h1>Prithviraj N</h1>
+  <div class="intro" id="intro" aria-label="Wedding invitation opening">
+    <div class="intro-arch">
+      <div class="door door-left"><span class="door-ornament">❋</span></div>
+      <div class="door door-right"><span class="door-ornament">❋</span></div>
+      <div class="intro-copy">
+        <p class="eyebrow">THE WEDDING OF</p>
+        <h1>Sree Ganga S D <span>&amp;</span> Prithviraj N</h1>
+        <p class="intro-date">21 &amp; 22 NOVEMBER 2026 · BENGALURU</p>
+        <button id="openInvite" class="gold-button">Tap to open <span aria-hidden="true">✦</span></button>
+      </div>
+      <div class="lamp lamp-left">🪔</div><div class="lamp lamp-right">🪔</div>
+      <div class="door-bottom-ornament" aria-hidden="true">❀　❈　❀</div>
+    </div>
+    <p class="intro-hint">A celebration of love, family &amp; new beginnings</p>
+    <p class="music-hint">Tap “Music” after opening to enjoy the soundtrack. Browsers require a tap to start audio.</p>
   </div>
 
-  <div class="ornament">✥ ━━━━━ ✥</div>
+  <audio id="weddingMusic" loop preload="none">
+    <source src="assets/wedding-music.mp3" type="audio/mpeg">
+  </audio>
+  <header class="site-header">
+    <a class="brand" href="#home">S <span>✦</span> P</a>
+    <div class="header-actions">
+      <button class="music-toggle" id="musicToggle" aria-pressed="false" aria-label="Turn background music on">♫ <span id="musicLabel">Music off</span></button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+    <nav id="nav">
+      <a href="#home">Home</a><a href="#celebration">Celebration</a><a href="#venue">Venue</a><a href="#gallery">Gallery</a><a href="#rsvp">RSVP</a>
+    </nav>
+  </header>
 
-  <div class="invite">
-    With joyful hearts and the blessings of our elders,
-    <br>
-    we invite you to join us as we begin
-    <br>
-    our journey together in marriage.
-  </div>
+  <main id="mainContent">
+    <section class="hero section" id="home">
+      <div class="floral floral-top" aria-hidden="true">❧ ✿ ❧</div>
+      <p class="eyebrow">WITH THE BLESSINGS OF THE ALMIGHTY</p>
+      <p class="intro-line">With joyful hearts,</p>
+      <h2>we invite you to celebrate the wedding of</h2>
+      <h1 class="couple-names"><span>Sree Ganga S D</span><em>&amp;</em><span>Prithviraj N</span></h1>
+      <div class="ornament">✧ ───── ❈ ───── ✧</div>
+      <p class="poem">Two hearts, one journey,<br>bound by love, blessed by family,<br>and made more beautiful by your presence.</p>
+      <p class="closing-invite">Your presence would mean the world to us<br>as we begin this new chapter together.</p>
+      <div class="temple-art" aria-hidden="true">
+        <svg viewBox="0 0 320 92" role="img" aria-label="Decorative South Indian temple silhouette">
+          <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+            <path d="M15 82H305M30 77V56H47V77M55 77V43H68V77M76 77V31H91V77M98 77V21H112V77M119 77V12H133V77M140 77V4H154V77M161 77V12H175V77M182 77V21H196V77M203 77V31H218V77M225 77V43H238V77M246 77V56H263V77"/>
+            <path d="M112 21L126 7L140 21M119 12L126 1L133 12M133 30H119M154 30H140M175 30H161M196 40H182M98 40H84M76 49H91M203 49H218"/>
+            <path d="M143 82V60Q147 48 154 60V82M151 82V65Q154 58 157 65V82M150 45H158M154 39V52M10 86H310"/>
+          </g>
+        </svg>
+      </div>
+      <a class="text-link" href="#celebration">Join us for the celebration ↓</a>
+    </section>
 
-  <section class="details">
-    <h2>Our Wedding</h2>
-    <p class="date">Wedding date to be announced</p>
-    <p>Venue details will be shared soon.</p>
-  </section>
+    <section class="section events" id="celebration">
+      <p class="eyebrow">SAVE THE DATES</p>
+      <h2 class="section-title">The Celebrations</h2>
+      <div class="ornament">✧ ───── ❈ ───── ✧</div>
+      <div class="event-grid">
+        <article class="event-card">
+          <div class="event-icon">✺</div>
+          <p class="event-label">THE EVENING BEFORE</p>
+          <h3>Reception</h3>
+          <p class="event-date">Saturday, November 21, 2026</p>
+          <p class="event-time">7:00 PM onwards</p>
+          <p class="event-note">An evening of joy, laughter and togetherness.</p>
+        </article>
+        <article class="event-card featured">
+          <div class="event-icon">❀</div>
+          <p class="event-label">THE WEDDING CEREMONY</p>
+          <h3>Muhurtham</h3>
+          <p class="event-date">Sunday, November 22, 2026</p>
+          <p class="event-time">6:30 AM – 8:00 AM</p>
+          <div class="event-divider"></div>
+          <p class="event-label">FOLLOWED BY</p>
+          <h3 class="lunch-title">Wedding Lunch</h3>
+          <p class="event-time">12:30 PM onwards</p>
+          <p class="event-note">Bless us with your presence on our special day.</p>
+        </article>
+      </div>
+    </section>
 
-  <h2>A Few Special Moments</h2>
-  <p class="small">Our photographs will be added here soon.</p>
-  <div class="photos">
-    <div class="photo">Photo 1<br>Coming soon</div>
-    <div class="photo">Photo 2<br>Coming soon</div>
-  </div>
+    <section class="section venue" id="venue">
+      <p class="eyebrow">WE LOOK FORWARD TO WELCOMING YOU</p>
+      <h2 class="section-title">The Venue</h2>
+      <div class="venue-illustration" aria-hidden="true">
+        <div class="palace-line">❧　🪔　❧</div>
+        <div class="palace-name">JAYAMAHAL PALACE HOTEL</div>
+        <div class="palace-rule"></div>
+        <p class="venue-illustration-note">A gathering blessed with tradition</p>
+      </div>
+      <h3>Jayamahal Palace Hotel</h3>
+      <p class="venue-location">Bengaluru, Karnataka, India</p>
+      <p class="venue-note">A beautiful place to gather, celebrate and make memories.</p>
+      <a class="outline-button" href="https://www.google.com/maps/search/?api=1&query=Jayamahal+Palace+Hotel+Bengaluru" target="_blank" rel="noopener">⌖ &nbsp; View on Google Maps</a>
+    </section>
 
-  <div class="music">
-    <button id="musicButton" type="button">♫ Turn Music On</button>
-    <p class="small" id="musicStatus">Background music is off.</p>
-    <audio id="weddingMusic" loop preload="none"></audio>
-  </div>
-</main>
+    <section class="section gallery" id="gallery">
+      <p class="eyebrow">A FEW MOMENTS FROM OUR STORY</p>
+      <h2 class="section-title">Our Journey</h2>
+      <div class="ornament">✧ ───── ❈ ───── ✧</div>
+      <p class="gallery-intro">A little space for the memories that brought us here.</p>
+      <div class="photo-grid">
+        <div class="photo-placeholder photo-one"><span>✿</span><small>Your favourite photo</small></div>
+        <div class="photo-placeholder photo-two"><span>♡</span><small>A moment together</small></div>
+        <div class="photo-placeholder photo-three"><span>❀</span><small>A memory to keep</small></div>
+        <div class="photo-placeholder photo-four"><span>✧</span><small>The story continues</small></div>
+      </div>
+      <p class="gallery-footnote">Personal photographs can be added here before the website is published.</p>
+    </section>
 
-<footer>
-  <div class="ornament">❈</div>
-  With love and blessings
-  <br>
-  <strong>Sree Ganga & Prithviraj</strong>
-  <p class="small">We look forward to celebrating with you.</p>
-</footer>
+    <section class="section rsvp" id="rsvp">
+      <p class="eyebrow">YOUR PRESENCE IS OUR GREATEST GIFT</p>
+      <h2 class="section-title">Celebrate With Us</h2>
+      <div class="ornament">✧ ───── ❈ ───── ✧</div>
+      <p class="rsvp-copy">We would be honoured to have you with us<br>for these special moments.</p>
+      <a class="gold-button rsvp-button" id="whatsappShare" href="#">Share this invitation on WhatsApp</a>
+      <button class="outline-button" id="shareButton">↗ &nbsp; Share invitation</button>
+      <p class="with-love">With love and gratitude,</p>
+      <p class="signature">Sree Ganga &amp; Prithviraj</p>
+      <div class="ornament">─ ♡ ─</div>
+      <p class="footer-blessing">May this new beginning be filled with love, laughter and blessings.</p>
+    </section>
+  </main>
 
-<script>
-const audio = document.getElementById("weddingMusic");
-const button = document.getElementById("musicButton");
-const status = document.getElementById("musicStatus");
-
-// Add your own music file URL here when ready.
-audio.src = "";
-
-button.addEventListener("click", async () => {
-  if (!audio.src || audio.src === window.location.href) {
-    status.textContent =
-      "Add a music file URL in the website code to enable playback.";
-    return;
-  }
-
-  if (audio.paused) {
-    try {
-      await audio.play();
-      button.textContent = "♫ Turn Music Off";
-      status.textContent = "Background music is playing.";
-    } catch (error) {
-      status.textContent = "Please try turning the music on again.";
-    }
-  } else {
-    audio.pause();
-    button.textContent = "♫ Turn Music On";
-    status.textContent = "Background music is off.";
-  }
-});
-</script>
+  <footer>MADE WITH LOVE · NOVEMBER 21–22, 2026</footer>
+  <script src="script.js"></script>
 </body>
 </html>
